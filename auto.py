@@ -2,9 +2,15 @@ import streamlit as st
 import pandas as pd
 import joblib  # or use pickle if you prefer
 import numpy as np
+import os
 
 # Load the trained model
-model = joblib.load("auto.pkl")  # Ensure this file is in the same directory
+model_path = "auto.pkl"
+if os.path.exists(model_path):
+    model = joblib.load(model_path)
+else:
+    st.error("Model file 'auto.pkl' not found. Please check the file location.")
+    st.stop()
 
 # Streamlit UI
 st.title("Car MPG Prediction App 🚗")
@@ -21,7 +27,15 @@ origin = st.selectbox("Origin", [1, 2, 3])  # Assume 1=USA, 2=Europe, 3=Asia
 
 # Predict Button
 if st.button("Predict MPG"):
-    input_data = np.array([[cylinders, displacement, horsepower, weight, acceleration, model_year, origin]])
-    prediction = model.predict(input_data)
-    st.success(f"Predicted MPG: {prediction[0]:.2f}")
+    try:
+        input_data = np.array([[cylinders, displacement, horsepower, weight, acceleration, model_year, origin]])
+        input_data = input_data.reshape(1, -1)  # Ensure proper shape for model
+        prediction = model.predict(input_data)
+        
+        if prediction is not None and len(prediction) > 0:
+            st.success(f"Predicted MPG: {float(prediction[0]):.2f}")
+        else:
+            st.error("Prediction failed. Model did not return a valid output.")
+    except Exception as e:
+        st.error(f"An error occurred during prediction: {str(e)}")
 
