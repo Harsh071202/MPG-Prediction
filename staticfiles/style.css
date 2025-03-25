@@ -1,0 +1,76 @@
+/* General Styling */
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+    background-color: #780C28; /* Maroon Red */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background: url('/staticfiles/car\ bg.jpg ') no-repeat center center fixed ghostwhite;
+    background-size: cover;
+
+}
+
+/* Header */
+h2 {
+    background-color: #08f6e2;
+    width: 350px;;
+    color: rgb(12, 51, 246);
+    margin-top: 20px;
+}
+
+/* Form Container */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 350px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+/* Input Fields */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Interactive Button */
+button {
+    background-color: #109dee; /* Yellow */
+    color: black;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+button:hover {
+    background-color: #324cf6; /* Lighter Yellow */
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 64, 0, 0.5);
+}
+
+/* Footer */
+footer {
+    background-color: #6f0303; /* Dark Maroon */
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+}
+
+/* Prediction Text */
+h3 {
+    color: rgb(9, 42, 228);
+    margin-top: 20px;
+}

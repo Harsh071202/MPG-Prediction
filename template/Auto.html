@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Prediction</title>
+    <link rel="stylesheet" href="/staticfiles/style.css">
+</head>
+<body>
+
+    <h2>Enter Car Specifications</h2>
+
+    <form action="{{ url_for('predict') }}" method="post">
+        <input type="text" name="Cylinders" placeholder="Cylinders" required>
+        <input type="text" name="Displacement" placeholder="Displacement" required>
+        <input type="text" name="Horsepower" placeholder="Horsepower" required>
+        <input type="text" name="Weight" placeholder="Weight" required>
+        <input type="text" name="Acceleration" placeholder="Acceleration" required>
+        <input type="text" name="Model_Year" placeholder="Model Year" required>
+        <input type="text" name="Origin" placeholder="Origin" required>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+    <h3>{{ prediction_text }}</h3>
+
+</body>
+</html>
