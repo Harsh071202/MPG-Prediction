@@ -44,10 +44,10 @@ mpg-prediction-app/
 ## 📊 Sample Output
 
 User Input:
-  Cylinders: 4
-  Horsepower: 90
-  Weight: 2500
-  Model Year: 2010
+  Cylinders: 4 ,
+  Horsepower: 90 ,
+  Weight: 2500 ,
+  Model Year: 2010 
 
 ✅ Predicted MPG: 28.56
 
